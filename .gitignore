@@ -1,0 +1,11 @@
+# Segredos — NUNCA versionar
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+
+# Logs / sessão
+*.log
+wpp-session/
