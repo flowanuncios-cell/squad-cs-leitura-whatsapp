@@ -41,6 +41,17 @@ rotina operacional** estiverem funcionando (Gate 6).
 
 ---
 
+## Versão visual (página navegável)
+
+**https://claude.ai/artifact/8xE8xNz6U7jBhyr5JN5STD** — a jornada inteira em uma
+página: linha do tempo, as 6 fases com responsável/SLA/evidência, checklists que
+abrem na hora de executar, os 6 gates, os 8 verbos e a tabela de diagnóstico.
+Tem filtro "meu papel" — o gestor vê só as etapas que são dele.
+
+> Página privada. Só abre para quem receber acesso pelo menu **Share**.
+
+---
+
 ## Mapa dos documentos
 
 | Arquivo | O que é | Quem usa |
