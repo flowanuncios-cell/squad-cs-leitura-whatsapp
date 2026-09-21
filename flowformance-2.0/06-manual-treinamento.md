@@ -13,19 +13,20 @@ RECEBER → ACESSAR → ENTENDER → INTEGRAR → CONSTRUIR → PUBLICAR → MED
 
 | Verbo | O que significa | Fase |
 |---|---|---|
-| **RECEBER** | Grupo, agenda, Trello, planilha, responsáveis | 1 |
-| **ACESSAR** | Meta, Google, Instagram, site, GMN, ferramentas | 3 |
-| **ENTENDER** | Produto, objetivo, público, verba, oferta, funil | 2 |
-| **INTEGRAR** | Pixel, tags, eventos, CRM, Make, tracking | 3 |
-| **CONSTRUIR** | Campanha, públicos, criativos, copy, orçamento | 4 |
-| **PUBLICAR** | Checklist, saldo, tracking, campanha e documentação | 4 |
-| **MEDIR** | Stract, relatórios, WhatsApp, CRM, qualidade dos leads | 5 |
-| **OTIMIZAR** | Campanha, criativos, verba, funil, OS, reuniões, novos ciclos | 5 e 6 |
+| **RECEBER** | Grupo, contato, agenda, Trello, planilha, responsáveis | 1 · D1 |
+| **ACESSAR** | Meta, Google Ads, GMN, Instagram, site, ferramentas | 1 pede · 3 valida |
+| **ENTENDER** | Produto, objetivo, público, verba, oferta, marca | 2 · D4 |
+| **INTEGRAR** | Reunião de Integração, pixel, tags, eventos, tracking, saldo | 3 · D10 |
+| **CONSTRUIR** | Funil, campanha, públicos, criativo, copy, orçamento | 4 · D10 |
+| **PUBLICAR** | Revisão, saldo, tracking, 1ª campanha e Doc 1ª Campanha | 4 · D10 |
+| **MEDIR** | Stract, Make, relatórios, WhatsApp, qualidade dos leads | 5 · 30 dias |
+| **OTIMIZAR** | Saldos, criativos, funil, OS, reuniões, novos ciclos | 5 e 6 |
 
-> **Nota de ordem:** na prática, ACESSAR e ENTENDER correm em paralelo. Pedimos
-> os acessos logo no D1 (porque o cliente demora) enquanto entendemos o negócio
-> no briefing. A sequência dos verbos é a lógica de dependência, não o calendário.
-> O calendário é o dos Gates.
+> **Por que ACESSAR vem antes de ENTENDER:** é assim no fluxo oficial — "Entrada no
+> grupo → Acesso" são os dois primeiros passos. O acesso é o item que mais atrasa o
+> D10, então o pedido sai no D1, enquanto o briefing acontece em paralelo. O que não
+> vier por mensagem se resolve ao vivo na **Reunião de Integração**, que é a etapa de
+> maior alavancagem do onboarding inteiro.
 
 ### Como usar os verbos no dia a dia
 
@@ -116,6 +117,7 @@ Resultado: ...
 | Erro | O que impede |
 |---|---|
 | Campanha no ar sem tracking | Gate 3 |
+| Acesso descoberto faltando na véspera do D10 | Pedido no D1 + Reunião de Integração |
 | Cliente sem saldo no dia da publicação | Checklist de integração, bloco A/B |
 | Criativo descoberto atrasado na véspera | Levantamento no D4 + OS aberta |
 | Integração faltando percebida depois de publicar | Gate 3 e Gate 4 |
@@ -130,6 +132,7 @@ Resultado: ...
 | Semana | Foco |
 |---|---|
 | **Dia 1** | Lê este manual, o [`01`](01-jornada-operacional.md) e o [`02`](02-gates.md) |
+| **Dia 1** | Abre o fluxograma navegável no modo *etapa a etapa* e percorre as 6 etapas |
 | **Dias 2–3** | Acompanha um cliente em cada fase, só observando o board |
 | **Semana 1** | Executa a Fase 1 e 2 de um cliente novo, com o líder revisando |
 | **Semana 2** | Executa Integração e Ativação com revisão de 4 olhos obrigatória |

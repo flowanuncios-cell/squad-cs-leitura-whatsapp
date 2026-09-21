@@ -4,10 +4,11 @@
 > requisitos estiverem cumpridos **com evidência**.
 
 ```
-Gate 1          Gate 2          Gate 3          Gate 4        Gate 5         Gate 6
-Cliente    →    Estratégia  →   Integrações →   Pronto    →   Campanha   →   Aprendizado  →  OPERAÇÃO
-recebido        definida        validadas       p/ campanha   publicada      concluído       CONTÍNUA
- (D1)            (D4)            (D8)            (D10)         (D10)          (D40)           (D40+)
+Gate 1          Gate 2           Gate 3          Gate 4        Gate 5         Gate 6
+Cliente    →    Manual de   →    Acessos e   →   Pronto    →   1ª Campanha →  Aprendizado  →  OPERAÇÃO
+recebido        Marca            Integração      p/ campanha   publicada      concluído       CONTÍNUA
+Pós Kickoff     ENTRA FLOW       validadas
+ (D1)            (D4)             (D10)           (D10)         (D10)         (30 dias)       (D40+)
 ```
 
 **Quem abre o Gate:** o Líder de Squad (LS). O gestor **solicita** a passagem
@@ -21,7 +22,7 @@ saber o que foi testado.
 ---
 
 ## Gate 1 — Cliente recebido
-**Fecha a Fase 1 · Marco D1**
+**Fecha a Fase 1 · Marco D1 — Pós Kickoff**
 
 | ☐ | Requisito | Evidência |
 |---|---|---|
@@ -29,7 +30,8 @@ saber o que foi testado.
 | ☐ | Grupo de WhatsApp criado e populado | Print do grupo |
 | ☐ | Responsáveis definidos | Membros no card |
 | ☐ | Boas-vindas enviadas | Print da mensagem |
-| ☐ | Briefing agendado (até D3) | Convite aceito |
+| ☐ | Acesso — lista única enviada ao cliente | Mensagem no card |
+| ☐ | Briefing agendado (até D3) e Reunião de Integração agendada (até D6) | Convites aceitos |
 | ☐ | Planilha do cliente criada | Link |
 | ☐ | Card Trello no template padrão | Link |
 | ☐ | Pasta do cliente organizada | Link |
@@ -40,7 +42,7 @@ card é cliente que some.
 ---
 
 ## Gate 2 — Estratégia definida
-**Fecha a Fase 2 · Marco D4**
+**Fecha a Fase 2 · Marco D4 — Manual de Marca · Entra Flowformance**
 
 | ☐ | Requisito | Evidência |
 |---|---|---|
@@ -51,7 +53,7 @@ card é cliente que some.
 | ☐ | Concorrência mapeada | Doc de concorrência |
 | ☐ | Funil desenhado até a venda | Imagem no card |
 | ☐ | Destino do lead + quem atende + em quanto tempo | Registrado no card |
-| ☐ | Manual de Marca disponível | Arquivo na pasta |
+| ☐ | **Manual de Marca entregue** — o marco do D4 | Arquivo na pasta |
 | ☐ | Criativos existentes levantados / OS aberta | Pasta + OS |
 
 **Se não passar:** não se monta campanha. Montar campanha sem estratégia é só
@@ -60,10 +62,11 @@ gastar verba mais rápido.
 ---
 
 ## Gate 3 — Integrações validadas
-**Fecha a Fase 3 · ~D8**
+**Fecha a Fase 3 · Marco D10 — Acessos e Integração**
 
 | ☐ | Requisito | Evidência |
 |---|---|---|
+| ☐ | **Reunião de Integração** realizada com tela compartilhada | Gravação + checklist preenchido ao vivo |
 | ☐ | Todos os itens **obrigatórios** do [checklist de integração](04-checklist-integracao.md) em ✅ | Checklist |
 | ☐ | Evento de conversão disparando em **teste real** | Print do evento recebido |
 | ☐ | Página/WhatsApp de destino testado com envio real | Print do recebimento |
@@ -71,7 +74,9 @@ gastar verba mais rápido.
 | ☐ | Itens não obrigatórios pendentes têm dono e data | Card |
 
 **Se não passar:** **não publica.** Não existe "sobe e a gente arruma o pixel
-depois" — o mês inteiro de dados vai embora.
+depois" — o mês inteiro de dados vai embora. Se o gate está travado, a causa quase
+sempre é uma Reunião de Integração que não aconteceu ou aconteceu sem o cliente
+com a tela aberta.
 
 ---
 
@@ -94,7 +99,7 @@ depois" — o mês inteiro de dados vai embora.
 ---
 
 ## Gate 5 — Campanha publicada
-**Marco D10**
+**Marco D10 — 1ª Campanha**
 
 | ☐ | Requisito | Evidência |
 |---|---|---|
@@ -109,7 +114,7 @@ depois" — o mês inteiro de dados vai embora.
 ---
 
 ## Gate 6 — Aprendizado concluído
-**Fecha o onboarding · D40**
+**Fecha o onboarding · fim dos 30 dias de aprendizado (D10 + 30)**
 
 | ☐ | Requisito | Evidência |
 |---|---|---|
@@ -122,7 +127,8 @@ depois" — o mês inteiro de dados vai embora.
 | ☐ | Reunião de performance realizada com o cliente | Ata |
 | ☐ | Documentação e bases atualizadas | Pasta + planilha |
 
-**Só aqui o cliente é marcado como `Operação Contínua`.**
+**Só aqui o cliente é marcado como `Operação Contínua`.** São 30 dias contados da
+1ª campanha no ar (D10), não do kickoff.
 O onboarding termina quando **campanha + tracking + documentação + rotina** estão
 funcionando — não quando o anúncio subiu.
 
@@ -132,7 +138,7 @@ funcionando — não quando o anúncio subiu.
 
 Modelo para a reunião interna semanal:
 
-| Cliente | D0 | Gate atual | Aberto desde | Travado em | Risco de D10 |
+| Cliente | D0 | Gate atual | Aberto desde | Travado em | Risco de marco |
 |---|---|---|---|---|---|
 | | | | | | |
 

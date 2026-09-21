@@ -12,12 +12,12 @@ para a direita.
 
 | # | Lista | Corresponde a | Sai da lista quando |
 |---|---|---|---|
-| 1 | `0 · Entrada (D0–D1)` | Fase 1 | Gate 1 aprovado |
-| 2 | `1 · Preparação (D1–D4)` | Fase 2 | Gate 2 aprovado |
-| 3 | `2 · Integração (D4–D10)` | Fase 3 | Gate 3 aprovado |
-| 4 | `3 · Ativação (até D10)` | Fase 4 | Gate 5 aprovado |
-| 5 | `4 · Aprendizado (D10–D40)` | Fase 5 | Gate 6 aprovado |
-| 6 | `5 · Operação Contínua (D40+)` | Fase 6 | Fim do contrato |
+| 1 | `0 · Entrada — Pós Kickoff D1` | Fase 1 | Gate 1 aprovado |
+| 2 | `1 · Preparação — Manual de Marca D4` | Fase 2 | Gate 2 aprovado |
+| 3 | `2 · Acessos e Integração — D10` | Fase 3 | Gate 3 aprovado |
+| 4 | `3 · 1ª Campanha — D10` | Fase 4 | Gate 5 aprovado |
+| 5 | `4 · Aprendizado — 30 dias` | Fase 5 | Gate 6 aprovado |
+| 6 | `5 · Operação Contínua — D40+` | Fase 6 | Fim do contrato |
 | 7 | `⛔ Bloqueado` | Qualquer fase | Impedimento resolvido |
 | 8 | `📕 Encerrados` | — | — |
 
@@ -32,8 +32,8 @@ está travado há mais de 48h, vai para Bloqueado com o motivo no topo da descri
 | Label | Uso |
 |---|---|
 | 🟢 `No prazo` | Dentro do SLA da fase |
-| 🟡 `Atenção` | Algo pendente, D10 ainda alcançável |
-| 🔴 `Risco de D10` | Vai furar o marco — cliente precisa ser avisado |
+| 🟡 `Atenção` | Algo pendente, o marco ainda é alcançável |
+| 🔴 `Risco de marco` | Vai furar D1, D4 ou D10 — cliente precisa ser avisado |
 | 🔵 `Aguardando cliente` | Dependência externa, com dono e data na descrição |
 | 🟣 `Gate solicitado` | Gestor pediu a passagem, LS ainda não validou |
 | ⚫ `Onboarding concluído` | Gate 6 aprovado |
@@ -51,7 +51,7 @@ Uma label de status (verde/amarelo/vermelho) por card. As outras se acumulam.
 ```markdown
 ## Dados
 - D0 (kickoff): dd/mm
-- D4: dd/mm  |  D10: dd/mm  |  D40: dd/mm
+- D4: dd/mm  |  D10: dd/mm  |  30 dias (D10+30): dd/mm
 - Verba mensal:
 - Objetivo e meta numérica:
 - Métrica principal:
@@ -84,18 +84,18 @@ Uma label de status (verde/amarelo/vermelho) por card. As outras se acumulam.
 O card do template já vem com **quatro** checklists, copiados de
 [`03-checklists-d1-d4-d10.md`](03-checklists-d1-d4-d10.md):
 
-1. `D1 — Cliente recebido`
-2. `D4 — Estratégia definida`
-3. `D10 — Campanha publicada`
-4. `D40 — Onboarding concluído`
+1. `D1 — Pós Kickoff`
+2. `D4 — Manual de Marca · Entra Flowformance`
+3. `D10 — Acessos e Integração + 1ª Campanha`
+4. `30 dias — Aprendizado concluído`
 
 Clientes com integração pesada ganham também o checklist
 `Integração (A–D)` de [`04`](04-checklist-integracao.md).
 
 ### Datas
 
-- **Data de entrega do card** = sempre o **próximo marco** (D4, depois D10,
-  depois D40). Nunca uma data solta.
+- **Data de entrega do card** = sempre o **próximo marco** (D1 → D4 → D10 →
+  30 dias). Nunca uma data solta.
 
 ---
 
@@ -168,7 +168,7 @@ Evidências conferidas: ...
 | Card entra em uma lista de fase | Definir data de entrega no próximo marco |
 | Checklist da fase 100% | Adicionar label 🟣 `Gate solicitado` e avisar o LS |
 | Card parado 48h na mesma lista | Comentar cobrando status |
-| Data de entrega vencida | Aplicar label 🔴 `Risco de D10` |
+| Data de entrega vencida | Aplicar label 🔴 `Risco de marco` |
 | Card movido para `⛔ Bloqueado` | Exigir comentário com dono e data |
 | Toda segunda 09:00 | Postar no card a pergunta "qual o Gate atual?" |
 

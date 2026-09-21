@@ -1,21 +1,32 @@
 # FLOWFORMANCE 2.0 — Sistema Operacional do Cliente
 
-> Camada operacional e treinável construída **sobre** o fluxograma oficial.
-> O fluxograma atual continua sendo a **arquitetura**. Isto aqui é o **sistema
-> que o gestor usa todo dia**.
+> Camada operacional e treinável construída **sobre** o fluxo oficial da Flowformance.
+> O fluxo oficial continua sendo a **arquitetura**. Isto aqui é o **sistema que o
+> gestor usa todo dia**.
+
+---
+
+## Versão visual — fluxograma que avança etapa a etapa
+
+**https://claude.ai/artifact/8xE8xNz6U7jBhyr5JN5STD**
+
+Abre no modo **Etapa a etapa**: uma etapa por tela, com *o que fazer agora* de um
+lado e *o que destrava a próxima* do outro. Tem também a **Visão completa** para
+consulta, e filtro "meu papel" — o júnior vê só o que é dele.
+
+> Página privada. Só abre para quem receber acesso pelo menu **Share**.
 
 ---
 
 ## Por que isso existe
 
 Com a entrada acelerada de clientes e um time mais jovem, o processo não pode
-depender de "saber como a gente faz". Cada etapa aqui tem os mesmos quatro
-elementos, sempre:
+depender de "saber como a gente faz". Cada etapa tem os mesmos quatro elementos:
 
 | Elemento | Pergunta que responde |
 |---|---|
 | **Responsável** | Quem faz? (nunca "o time") |
-| **SLA** | Até quando? (contado a partir do D0) |
+| **SLA** | Até quando? |
 | **Checklist** | O que exatamente precisa ser feito? |
 | **Evidência** | Como eu provo que está concluído? (link, print, doc) |
 
@@ -23,32 +34,28 @@ Sem os quatro, a etapa não existe no sistema.
 
 ---
 
-## As 6 fases e os 3 marcos
+## Os marcos oficiais
 
 ```
-D0 ──── D1 ──────── D4 ─────────── D10 ──────────── D40 ────────►
- │       │           │              │                │
- ENTRADA │ PREPARAÇÃO│  INTEGRAÇÃO  │   ATIVAÇÃO     │ APRENDIZADO │ OPERAÇÃO
-         ▼           ▼              ▼                ▼            CONTÍNUA
-      MARCO D1    MARCO D4      MARCO D10        (fim do
-      cliente     estratégia    1ª campanha      onboarding
-      recebido    disponível    publicada        de verdade)
+KICKOFF ──── D1 ──────── D4 ─────────── D10 ──────────── +30 dias ────────►
+             │            │              │                  │
+          Pós Kickoff  Manual de      Acessos e          Aprendizado
+                       Marca          Integração         concluído
+                       ENTRA FLOW     + 1ª Campanha      FIM DO ONBOARDING
 ```
+
+| Fase | Marco | Gate |
+|---|---|---|
+| 1 · Entrada | **Pós Kickoff D1** | Gate 1 |
+| 2 · Preparação | **Manual de Marca D4** · Entra Flowformance | Gate 2 |
+| 3 · Integração | **Acessos e Integração D10** | Gate 3 |
+| 4 · Ativação | **1ª Campanha D10** | Gates 4 e 5 |
+| 5 · Aprendizado | **30 dias** (D10 + 30) | Gate 6 |
+| 6 · Operação contínua | ciclo trimestral | — |
 
 **Regra binária número 1:** campanha publicada **não** significa onboarding
-concluído. O onboarding só termina quando **campanha + tracking + documentação +
-rotina operacional** estiverem funcionando (Gate 6).
-
----
-
-## Versão visual (página navegável)
-
-**https://claude.ai/artifact/8xE8xNz6U7jBhyr5JN5STD** — a jornada inteira em uma
-página: linha do tempo, as 6 fases com responsável/SLA/evidência, checklists que
-abrem na hora de executar, os 6 gates, os 8 verbos e a tabela de diagnóstico.
-Tem filtro "meu papel" — o gestor vê só as etapas que são dele.
-
-> Página privada. Só abre para quem receber acesso pelo menu **Share**.
+concluído. O D10 fecha a *ativação*. O onboarding só termina quando **campanha +
+tracking + documentação + rotina operacional** estiverem funcionando (Gate 6).
 
 ---
 
@@ -56,42 +63,47 @@ Tem filtro "meu papel" — o gestor vê só as etapas que são dele.
 
 | Arquivo | O que é | Quem usa |
 |---|---|---|
-| [`00-papeis-sla-e-glossario.md`](00-papeis-sla-e-glossario.md) | Papéis, matriz RACI, tabela de SLAs, glossário | Todos |
 | [`01-jornada-operacional.md`](01-jornada-operacional.md) | ⭐ As 6 fases, etapa por etapa, com os 4 elementos | Todos |
 | [`02-gates.md`](02-gates.md) | Os 6 Gates e seus critérios de passagem | Líder de Squad |
-| [`03-checklists-d1-d4-d10.md`](03-checklists-d1-d4-d10.md) | Checklists imprimíveis dos 3 marcos | Gestor / CS |
-| [`04-checklist-integracao.md`](04-checklist-integracao.md) | Checklist técnico de 3 estados | Tech / Gestor |
+| [`03-checklists-d1-d4-d10.md`](03-checklists-d1-d4-d10.md) | Checklists imprimíveis dos marcos | Gestor / CS |
+| [`04-checklist-integracao.md`](04-checklist-integracao.md) | Checklist técnico de 3 estados + Reunião de Integração | Tech / CS |
 | [`05-trello-padrao.md`](05-trello-padrao.md) | Board padrão, listas, labels, template de card | CS / Líder |
 | [`06-manual-treinamento.md`](06-manual-treinamento.md) | Os 8 verbos + como otimizar o sistema de aquisição | Gestor novo |
-| [`07-fluxograma.md`](07-fluxograma.md) | Fluxograma visual (Mermaid) em 3 camadas | Todos |
-| [`templates/`](templates/) | Briefing, Doc da 1ª Campanha, OS, Relatório semanal | Todos |
+| [`07-fluxograma.md`](07-fluxograma.md) | Fluxograma progressivo (Mermaid), etapa a etapa | Todos |
+| [`08-mapa-do-fluxo-oficial.md`](08-mapa-do-fluxo-oficial.md) | Cada item do fluxo oficial e onde ele vive aqui | Líder de Squad |
+| [`00-papeis-sla-e-glossario.md`](00-papeis-sla-e-glossario.md) | Papéis, RACI, tabela de SLAs, glossário | Todos |
+| [`templates/`](templates/) | Briefing, Doc 1ª Campanha, OS, Relatório semanal | Todos |
 
 ---
 
 ## Como usar no dia a dia
 
 1. **Entrou cliente?** Abre o card do template no Trello ([`05`](05-trello-padrao.md)) —
-   ele já vem com os checklists de D1/D4/D10.
-2. **"O que eu faço agora?"** → não pergunta. Olha em qual **fase** o cliente está
-   ([`01`](01-jornada-operacional.md)) e qual **Gate** está aberto ([`02`](02-gates.md)).
-3. **Vai avançar de fase?** Só passa se o Gate estiver cumprido **com evidência**.
-4. **Travou?** Item em 🟡 Pendente/Bloqueado por mais de 48h vira escalada para o
-   Líder de Squad — não fica parado esperando o cliente lembrar.
+   já vem com os checklists de D1/D4/D10/30 dias.
+2. **"O que eu faço agora?"** → não pergunta. Abre o fluxograma no modo *etapa a
+   etapa* e olha em qual etapa o cliente está.
+3. **Vai avançar?** Só passa se o Gate estiver cumprido **com evidência**, e quem
+   move o card é quem aprova — não quem executou.
+4. **Travou?** Item em 🟡 por mais de 48h vira escalada para o líder. Não fica
+   parado esperando o cliente lembrar.
 
 ---
 
-## Regra de ouro do treinamento
+## Os três pontos de maior alavancagem
 
-> **Não otimizar apenas o Gerenciador. Otimizar o sistema de aquisição.**
->
-> `Anúncio → Clique → Página/WhatsApp → Lead → Qualidade → Venda`
-
-Ver [`06-manual-treinamento.md`](06-manual-treinamento.md).
+1. **Acesso é o passo 2, não o passo 10.** O pedido sai no D1, porque é o item que
+   mais atrasa o D10.
+2. **A Reunião de Integração resolve em uma hora o que o WhatsApp não resolve em
+   seis dias.** Cliente com a tela compartilhada, acessos concedidos durante a call.
+3. **Otimizar o sistema de aquisição, não o Gerenciador.**
+   `Anúncio → Clique → Página/WhatsApp → Lead → Qualidade → Venda`
 
 ---
 
-## Status deste documento
+## Status
 
-Versão 1.0 — proposta inicial da camada operacional. Os **nomes dos papéis e os
-SLAs** são uma proposta de partida: ajuste em [`00`](00-papeis-sla-e-glossario.md)
-para a realidade da squad antes de publicar para o time.
+Versão 2.0 — alinhada ao fluxo oficial da Flowformance (ordem, marcos e
+vocabulário). Os **nomes dos papéis** e as **metas internas** (D3, D6, D8, D9) são
+proposta de partida: ajuste em [`00`](00-papeis-sla-e-glossario.md) antes de
+publicar para o time. Os marcos (D1, D4, D10, 30 dias) vêm do fluxo oficial e não
+devem ser alterados sem decisão da liderança.

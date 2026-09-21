@@ -14,6 +14,19 @@
 
 ---
 
+## Bloco 0 — Reunião de Integração *(obrigatório)*
+
+| Estado | Item | Evidência esperada | Dono | Data |
+|---|---|---|---|---|
+| ⬜ | Reunião agendada até D6 | Convite aceito | CS | |
+| ⬜ | Cliente compartilhando tela na call | Gravação | CS | |
+| ⬜ | Acessos concedidos **durante** a call | Checklist preenchido ao vivo | TEC | |
+| ⬜ | O que sobrou saiu com dono e data | Registro no card | CS | |
+
+> Esta é a etapa de maior alavancagem do onboarding. Uma hora de call com a tela
+> compartilhada resolve o que seis dias de cobrança no WhatsApp não resolvem.
+> Quando ela não acontece, o D10 fura — é o padrão, não a exceção.
+
 ## Bloco A — Meta *(obrigatório)*
 
 | Estado | Item | Evidência esperada | Dono | Data |
