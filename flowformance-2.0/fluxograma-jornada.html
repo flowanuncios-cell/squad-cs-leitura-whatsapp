@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Fluxograma progressivo do fluxo oficial da Flowformance: 6 etapas, marcos D1/D4/D10 e 30 dias, com responsavel, prazo, checklist e evidencia.">
+<style>
+  :root {
+    color-scheme: light dark;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  body { margin: 0; font-family: system-ui, sans-serif; font-size: 14px; background: #fafaf9; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+<title>Jornada do Cliente Flowformance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #F2F5F9;
+    --surface: #FFFFFF;
+    --surface-2: #E9EDF4;
+    --ink: #0F1420;
+    --ink-2: #333D4F;
+    --muted: #5D6A7E;
+    --line: #D6DDE8;
+    --line-strong: #BCC6D6;
+    --accent: #2C3EB0;
+    --accent-ink: #1D2B86;
+    --accent-soft: #E5E8FA;
+    --on-accent: #FFFFFF;
+    --ok: #12705A;
+    --ok-soft: #DCF0E8;
+    --warn: #9C5C00;
+    --warn-soft: #FAEDD6;
+    --risk: #A62A21;
+    --shadow: 0 1px 2px rgba(15, 20, 32, .05), 0 8px 24px -18px rgba(15, 20, 32, .35);
+
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    --maxw: 1080px;
+    --r: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0C1017;
+      --surface: #141A24;
+      --surface-2: #1B2230;
+      --ink: #E9EEF6;
+      --ink-2: #C3CCDB;
+      --muted: #94A1B5;
+      --line: #242C3A;
+      --line-strong: #364153;
+      --accent: #93A2FF;
+      --accent-ink: #B4BEFF;
+      --accent-soft: #1A2044;
+      --on-accent: #0C1017;
+      --ok: #55C49E;
+      --ok-soft: #102C26;
+      --warn: #E0A64A;
+      --warn-soft: #302410;
+      --risk: #F1837A;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 26px -20px rgba(0, 0, 0, .9);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0C1017;
+    --surface: #141A24;
+    --surface-2: #1B2230;
+    --ink: #E9EEF6;
+    --ink-2: #C3CCDB;
+    --muted: #94A1B5;
+    --line: #242C3A;
+    --line-strong: #364153;
+    --accent: #93A2FF;
+    --accent-ink: #B4BEFF;
+    --accent-soft: #1A2044;
+    --on-accent: #0C1017;
+    --ok: #55C49E;
+    --ok-soft: #102C26;
+    --warn: #E0A64A;
+    --warn-soft: #302410;
+    --risk: #F1837A;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 26px -20px rgba(0, 0, 0, .9);
+  }
+
+  * { box-sizing: border-box; }
+
+  [hidden] { display: none !important; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: 20px; }
+
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  a { color: var(--accent-ink); }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---------- masthead ---------- */
+
+  .masthead { border-bottom: 1px solid var(--line); background: var(--surface); }
+  .masthead .wrap { padding-block: 36px 26px; display: grid; gap: 14px; }
+  .masthead h1 { font-size: clamp(29px, 5.6vw, 44px); line-height: 1.05; }
+  .masthead h1 span { color: var(--accent); }
+  .lede { max-width: 62ch; color: var(--ink-2); font-size: 16px; margin: 0; }
+
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+
+  .fact {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 9px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    color: var(--ink-2);
+  }
+
+  /* ---------- sticky nav ---------- */
+
+  .navbar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navbar .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding-block: 9px;
+  }
+
+  .modeswitch {
+    display: inline-flex;
+    padding: 3px;
+    gap: 3px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .modebtn {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 11px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .modebtn[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+
+  .navlinks { display: flex; gap: 2px; flex-wrap: wrap; }
+
+  .navlinks a {
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 5px 8px;
+    border-radius: 7px;
+  }
+
+  .navlinks a:hover { color: var(--ink); background: var(--surface-2); }
+
+  .rolefilter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-left: auto;
+  }
+
+  .rolefilter .lbl {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 2px;
+  }
+
+  .rolebtn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 4px 7px;
+    border-radius: 6px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .rolebtn:hover { color: var(--ink); border-color: var(--accent); }
+
+  .rolebtn[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+  }
+
+  /* ---------- sections ---------- */
+
+  section { padding-block: 38px 8px; }
+
+  .sechead { display: grid; gap: 6px; margin-bottom: 18px; }
+  .sechead h2 { font-size: clamp(21px, 3.4vw, 27px); }
+  .sechead p { margin: 0; color: var(--muted); max-width: 66ch; }
+
+  /* ---------- rail ---------- */
+
+  .railbox { overflow-x: auto; padding-bottom: 6px; }
+  .rail { display: flex; align-items: stretch; min-width: 900px; }
+
+  .seg {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-right: none;
+    padding: 12px 13px 13px;
+    display: grid;
+    gap: 3px;
+    align-content: start;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+  }
+
+  .seg:first-child { border-radius: var(--r) 0 0 var(--r); }
+  .seg:last-child { border-right: 1px solid var(--line); border-radius: 0 var(--r) var(--r) 0; }
+  .seg:hover { background: var(--accent-soft); }
+
+  .seg .num { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--accent); letter-spacing: .08em; }
+  .seg .nm { font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: -.01em; }
+  .seg .win { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+  .seg .marco {
+    margin-top: 6px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--ink-2);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 6px;
+  }
+
+  .seg.is-marco { border-top: 3px solid var(--accent); }
+  .seg.current { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent); }
+
+  .railkey { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+  .railkey b { color: var(--ink-2); font-weight: 600; }
+
+  /* ---------- callout ---------- */
+
+  .callout {
+    margin-top: 20px;
+    background: var(--warn-soft);
+    border: 1px solid color-mix(in srgb, var(--warn) 35%, transparent);
+    border-left: 4px solid var(--warn);
+    border-radius: var(--r);
+    padding: 14px 16px;
+    display: grid;
+    gap: 5px;
+  }
+
+  .callout.key { background: var(--ok-soft); border-color: color-mix(in srgb, var(--ok) 35%, transparent); border-left-color: var(--ok); }
+  .callout .k { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--warn); }
+  .callout.key .k { color: var(--ok); }
+  .callout p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+  .callout strong { color: var(--ink); }
+
+  /* ---------- stepper ---------- */
+
+  .stepbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .stepbar .pos { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  .navbtn {
+    font-family: var(--body);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 7px 13px;
+    border-radius: 8px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .navbtn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-ink); }
+  .navbtn:disabled { opacity: .35; cursor: default; }
+  .navbtn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .navbtn.primary:hover:not(:disabled) { color: var(--on-accent); opacity: .9; }
+  .stepbar .spacer { margin-left: auto; }
+
+  /* ---------- phases ---------- */
+
+  .phases { display: grid; gap: 22px; }
+
+  .phase {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .phase > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 5px 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+
+  .phase h3 { font-size: 17px; }
+  .phase .idx { font-family: var(--mono); font-weight: 600; font-size: 12px; color: var(--accent); }
+  .phase .win { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .phase .goal { width: 100%; margin: 0; font-size: 13.5px; color: var(--muted); }
+
+  .phasebody { display: grid; }
+
+  .mode-step .phasebody { grid-template-columns: 1fr; }
+
+  @media (min-width: 860px) {
+    .mode-step .phasebody { grid-template-columns: 1.55fr 1fr; }
+  }
+
+  .colhead {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 18px 2px;
+    display: none;
+  }
+
+  .mode-step .colhead { display: block; }
+
+  .steps { display: grid; }
+
+  .step {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 14px;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step:last-child { border-bottom: none; }
+  .step.dim { opacity: .3; }
+
+  .step .title { font-weight: 600; font-size: 14.5px; grid-column: 1; }
+
+  .step .title em {
+    font-family: var(--mono);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--muted);
+    margin-right: 7px;
+  }
+
+  .step .tags { grid-column: 2; grid-row: 1; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+  .resp, .sla {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  .resp { background: var(--accent-soft); color: var(--accent-ink); }
+  .sla { border: 1px solid var(--line-strong); color: var(--ink-2); }
+  .sla.marco { border-color: var(--accent); color: var(--accent-ink); background: var(--accent-soft); }
+
+  .ev { grid-column: 1 / -1; font-size: 13px; color: var(--muted); }
+
+  .ev b {
+    color: var(--ok);
+    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+
+  .note {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--ink-2);
+    border-left: 3px solid var(--warn);
+    padding: 2px 0 2px 10px;
+  }
+
+  .ck { grid-column: 1 / -1; margin-top: 4px; }
+
+  .ck summary {
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent-ink);
+    letter-spacing: .04em;
+    width: fit-content;
+  }
+
+  .ck ul { margin: 8px 0 2px; padding-left: 0; list-style: none; display: grid; gap: 5px; }
+
+  .ck li { font-size: 13.5px; color: var(--ink-2); padding-left: 22px; position: relative; }
+
+  .ck li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 3px;
+  }
+
+  /* advance panel */
+
+  .advance { display: none; padding: 0 18px 16px; }
+  .mode-step .advance { display: block; }
+
+  @media (min-width: 860px) {
+    .mode-step .advance {
+      border-left: 1px solid var(--line);
+      padding-top: 0;
+      position: sticky;
+      top: calc(env(safe-area-inset-top, 0px) + 60px);
+      align-self: start;
+    }
+  }
+
+  .advance .gatename {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 15px;
+    margin: 4px 0 8px;
+  }
+
+  .advance ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 7px; }
+
+  .advance li { font-size: 13.5px; color: var(--ink-2); padding-left: 22px; position: relative; }
+
+  .advance li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid var(--ok);
+    border-radius: 3px;
+  }
+
+  .advance .who {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 10px;
+  }
+
+  .phase > footer {
+    padding: 12px 18px;
+    background: var(--accent-soft);
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: baseline;
+    font-size: 13.5px;
+    color: var(--ink-2);
+  }
+
+  .phase > footer .g {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+  }
+
+  /* ---------- gates ---------- */
+
+  .gatelist { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+
+  .gate-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: var(--r);
+    padding: 15px 17px;
+    display: grid;
+    gap: 9px;
+    align-content: start;
+  }
+
+  .gate-card.final { border-top-color: var(--ok); }
+  .gate-card h3 { font-size: 15.5px; }
+  .gate-card .when { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .gate-card ul { margin: 0; padding-left: 17px; display: grid; gap: 4px; font-size: 13.5px; color: var(--ink-2); }
+
+  .gate-card .stop {
+    font-size: 13px;
+    color: var(--risk);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 9px;
+    margin: 0;
+  }
+
+  .gate-card.final .stop { color: var(--ok); }
+
+  /* ---------- verbs ---------- */
+
+  .verbs { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+  .verb {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 13px 15px;
+    display: grid;
+    gap: 5px;
+    align-content: start;
+  }
+
+  .verb .n { font-family: var(--mono); font-size: 10.5px; font-weight: 600; color: var(--muted); }
+  .verb h3 { font-size: 17px; letter-spacing: .01em; color: var(--accent); }
+  .verb p { margin: 0; font-size: 13.5px; color: var(--ink-2); }
+  .verb .ph { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+
+  /* ---------- funnel ---------- */
+
+  .funnelbox { overflow-x: auto; }
+  .funnel { display: flex; align-items: stretch; gap: 8px; min-width: 720px; margin-bottom: 10px; }
+
+  .fstep {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-bottom: 3px solid var(--accent);
+    border-radius: var(--r);
+    padding: 11px 12px;
+    display: grid;
+    gap: 3px;
+    position: relative;
+  }
+
+  .fstep .fn { font-family: var(--display); font-weight: 600; font-size: 13.5px; letter-spacing: -.01em; }
+  .fstep .fm { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+  .fstep::after {
+    content: "→";
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--line-strong);
+    font-size: 14px;
+    z-index: 1;
+  }
+
+  .fstep:last-child::after { content: none; }
+
+  .tablebox { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); }
+
+  table { border-collapse: collapse; width: 100%; min-width: 660px; }
+
+  th, td { text-align: left; padding: 10px 13px; border-bottom: 1px solid var(--line); font-size: 13.5px; vertical-align: top; }
+
+  th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--surface-2);
+    white-space: nowrap;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  td.sym { color: var(--ink); font-weight: 500; }
+  td.stage { font-family: var(--mono); font-size: 12px; color: var(--accent-ink); white-space: nowrap; }
+  td:last-child { color: var(--ink-2); }
+
+  /* ---------- roles ---------- */
+
+  .roles { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+  .role { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px 14px; display: grid; gap: 3px; }
+  .role .sig { font-family: var(--mono); font-weight: 600; font-size: 12px; color: var(--accent); }
+  .role .nm { font-weight: 600; font-size: 14px; }
+  .role p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  /* ---------- footer ---------- */
+
+  .pagefoot { margin-top: 44px; border-top: 1px solid var(--line); background: var(--surface); }
+  .pagefoot .wrap { padding-block: 24px 32px; display: grid; gap: 8px; }
+  .pagefoot p { margin: 0; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
+
+  @media (max-width: 560px) {
+    .step { grid-template-columns: 1fr; }
+    .step .tags { grid-column: 1; grid-row: auto; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+  }
+
+  html { scroll-behavior: smooth; }
+</style>
+
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Flowformance 2.0 · Sistema operacional</div>
+    <h1>Jornada operacional <span>do cliente</span></h1>
+    <p class="lede">
+      O fluxo oficial da Flowformance, etapa a etapa, com responsável, prazo, checklist
+      e evidência. Feito para quem está começando: uma etapa por vez, com o que fazer
+      agora de um lado e o que destrava a próxima do outro.
+    </p>
+    <div class="facts">
+      <span class="fact">Pós Kickoff D1</span>
+      <span class="fact">Manual de Marca D4</span>
+      <span class="fact">Acessos e Integração D10</span>
+      <span class="fact">1ª Campanha D10</span>
+      <span class="fact">Aprendizado 30 dias</span>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar" aria-label="Navegação">
+  <div class="wrap">
+    <div class="modeswitch" role="group" aria-label="Modo de visualização">
+      <button class="modebtn" data-mode="step" aria-pressed="true">Etapa a etapa</button>
+      <button class="modebtn" data-mode="full" aria-pressed="false">Visão completa</button>
+    </div>
+    <div class="navlinks">
+      <a href="#gates">Gates</a>
+      <a href="#verbos">8 verbos</a>
+      <a href="#sistema">Diagnóstico</a>
+      <a href="#papeis">Papéis</a>
+    </div>
+    <div class="rolefilter" role="group" aria-label="Filtrar etapas por responsável">
+      <span class="lbl">Meu papel</span>
+      <button class="rolebtn" data-role="all" aria-pressed="true">Todos</button>
+      <button class="rolebtn" data-role="LS" aria-pressed="false">LS</button>
+      <button class="rolebtn" data-role="CS" aria-pressed="false">CS</button>
+      <button class="rolebtn" data-role="GT" aria-pressed="false">GT</button>
+      <button class="rolebtn" data-role="CR" aria-pressed="false">CR</button>
+      <button class="rolebtn" data-role="TEC" aria-pressed="false">TEC</button>
+      <button class="rolebtn" data-role="ADM" aria-pressed="false">ADM</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section id="linha" aria-labelledby="h-linha">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">Linha do tempo</div>
+        <h2 id="h-linha">Do kickoff à operação contínua</h2>
+        <p>Clique em uma etapa para abrir. Cada uma termina em um gate, e o gate só abre com evidência anexada — quem abre é o líder de squad, não quem executou.</p>
+      </div>
+
+      <div class="railbox">
+        <div class="rail" id="rail"></div>
+      </div>
+
+      <div class="railkey">
+        <span><b>Marco</b> — compromisso de data com o cliente</span>
+        <span><b>Meta interna</b> — prazo da squad para chegar ao marco sem correria</span>
+        <span><b>Evidência</b> — link, print ou documento. “Fiz” não conta</span>
+      </div>
+
+      <div class="callout">
+        <span class="k">Regra binária</span>
+        <p>
+          <strong>Campanha publicada não é onboarding concluído.</strong> O D10 fecha a
+          <em>ativação</em>. O onboarding só termina quando campanha + tracking +
+          documentação + rotina operacional estiverem funcionando — o Gate 6, no fim dos
+          30 dias de aprendizado.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fases" aria-labelledby="h-fases">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">O fluxo oficial</div>
+        <h2 id="h-fases">Etapa por etapa</h2>
+        <p>Responsável, prazo e evidência ficam visíveis; o checklist abre na hora de executar. Use o filtro “meu papel” para ver só o que é seu.</p>
+      </div>
+
+      <div class="stepbar" id="stepbar">
+        <button class="navbtn" id="prev" type="button">← Etapa anterior</button>
+        <span class="pos" id="pos"></span>
+        <button class="navbtn primary spacer" id="next" type="button">Próxima etapa →</button>
+      </div>
+
+      <div class="phases mode-step" id="phases"></div>
+    </div>
+  </section>
+
+  <section id="gates" aria-labelledby="h-gates">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">Sistema de gates</div>
+        <h2 id="h-gates">As seis portas</h2>
+        <p>Cada gate existe porque um erro específico já custou caro. Quem executa solicita a passagem; o líder confere as evidências e move o card.</p>
+      </div>
+      <div class="gatelist">
+        <article class="gate-card">
+          <h3>Gate 1 — Cliente recebido</h3>
+          <span class="when">fecha a fase 1 · marco D1 — Pós Kickoff</span>
+          <ul>
+            <li>Resumo comercial recebido</li>
+            <li>Grupo, responsáveis e boas-vindas</li>
+            <li><strong>Lista única de acessos enviada</strong></li>
+            <li>Briefing (até D3) e Reunião de Integração (até D6) agendados</li>
+            <li>Planilha, card e pasta criados</li>
+          </ul>
+          <p class="stop">Não passou? O cliente não entra na fila de produção. Cliente sem dono e sem card é cliente que some.</p>
+        </article>
+
+        <article class="gate-card">
+          <h3>Gate 2 — Manual de Marca</h3>
+          <span class="when">fecha a fase 2 · marco D4 · Entra Flowformance</span>
+          <ul>
+            <li>Briefing preenchido e gravado</li>
+            <li>Meta <strong>numérica</strong> com prazo</li>
+            <li>Oferta, público e concorrência</li>
+            <li>Quem atende o lead e em quanto tempo</li>
+            <li>Criativos levantados e OS aberta</li>
+            <li><strong>Manual de Marca entregue</strong></li>
+          </ul>
+          <p class="stop">Não passou? Não se monta campanha. Campanha sem estratégia só gasta a verba mais rápido.</p>
+        </article>
+
+        <article class="gate-card">
+          <h3>Gate 3 — Acessos e Integração</h3>
+          <span class="when">fecha a fase 3 · marco D10</span>
+          <ul>
+            <li><strong>Reunião de Integração realizada</strong>, com tela compartilhada</li>
+            <li>Meta, GMN, Google Ads, site e traqueamentos</li>
+            <li>Evento de conversão em teste real</li>
+            <li>Formulário/WhatsApp testado de verdade</li>
+            <li>Saldo ativo e compatível com a verba</li>
+          </ul>
+          <p class="stop">Não passou? Não publica. Não existe “sobe e a gente arruma o pixel depois” — o mês de dados vai embora.</p>
+        </article>
+
+        <article class="gate-card">
+          <h3>Gate 4 — Pronto para campanha</h3>
+          <span class="when">antes da publicação · até D10</span>
+          <ul>
+            <li>Funil e estratégia documentados, com hipótese</li>
+            <li>Estrutura, orçamento e públicos</li>
+            <li>Criativo e copy aprovados</li>
+            <li>Link de destino testado com clique real</li>
+            <li>Revisão de 4 olhos pelo líder</li>
+          </ul>
+          <p class="stop">É a última chance barata de achar erro. Depois de publicar, o erro tem custo de mídia.</p>
+        </article>
+
+        <article class="gate-card">
+          <h3>Gate 5 — 1ª Campanha publicada</h3>
+          <span class="when">marco D10</span>
+          <ul>
+            <li>Campanha ativa e aprovada</li>
+            <li>Primeiro gasto confirmado</li>
+            <li>Primeiro evento registrado</li>
+            <li>Doc 1ª Campanha preenchido</li>
+            <li>Cliente comunicado no grupo</li>
+          </ul>
+          <p class="stop">Encerra a ativação — não o onboarding.</p>
+        </article>
+
+        <article class="gate-card final">
+          <h3>Gate 6 — Aprendizado concluído</h3>
+          <span class="when">fecha o onboarding · 30 dias após o D10</span>
+          <ul>
+            <li>Stract e Make rodando, relatórios semanais sem improviso</li>
+            <li>30 dias de dados coletados</li>
+            <li>CPL/CPA de referência estabelecido</li>
+            <li>3+ ciclos de otimização documentados</li>
+            <li>Qualidade de lead validada com quem atende</li>
+          </ul>
+          <p class="stop">Só aqui o cliente vira “Operação contínua”.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="verbos" aria-labelledby="h-verbos">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">Linguagem do treinamento</div>
+        <h2 id="h-verbos">Toda a operação em oito verbos</h2>
+        <p><strong>ACESSAR vem antes de ENTENDER</strong> porque é assim no fluxo oficial: entrada no grupo, depois acesso. O acesso é o item que mais atrasa o D10, então o pedido sai no D1 e o briefing corre em paralelo.</p>
+      </div>
+      <div class="verbs">
+        <article class="verb"><span class="n">01</span><h3>RECEBER</h3><p>Grupo, contato, agenda, Trello, planilha, responsáveis.</p><span class="ph">fase 1 · D1</span></article>
+        <article class="verb"><span class="n">02</span><h3>ACESSAR</h3><p>Meta, Google Ads, GMN, Instagram, site, ferramentas.</p><span class="ph">fase 1 pede · fase 3 valida</span></article>
+        <article class="verb"><span class="n">03</span><h3>ENTENDER</h3><p>Produto, objetivo, público, verba, oferta, marca.</p><span class="ph">fase 2 · D4</span></article>
+        <article class="verb"><span class="n">04</span><h3>INTEGRAR</h3><p>Reunião de Integração, pixel, tags, eventos, tracking, saldo.</p><span class="ph">fase 3 · D10</span></article>
+        <article class="verb"><span class="n">05</span><h3>CONSTRUIR</h3><p>Funil, campanha, públicos, criativo, copy, orçamento.</p><span class="ph">fase 4 · D10</span></article>
+        <article class="verb"><span class="n">06</span><h3>PUBLICAR</h3><p>Revisão, saldo, tracking, 1ª campanha e Doc 1ª Campanha.</p><span class="ph">fase 4 · D10</span></article>
+        <article class="verb"><span class="n">07</span><h3>MEDIR</h3><p>Stract, Make, relatórios, WhatsApp, qualidade dos leads.</p><span class="ph">fase 5 · 30 dias</span></article>
+        <article class="verb"><span class="n">08</span><h3>OTIMIZAR</h3><p>Saldos, criativos, funil, OS, reuniões, novos ciclos.</p><span class="ph">fases 5 e 6</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sistema" aria-labelledby="h-sistema">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">Regra central</div>
+        <h2 id="h-sistema">Não otimizar apenas o Gerenciador. Otimizar o sistema de aquisição.</h2>
+        <p>O Gerenciador é uma etapa de seis. A análise começa pela direita e caminha para a esquerda: se não há venda, a pergunta não é “qual criativo trocar”, é “em qual etapa a sequência quebra”.</p>
+      </div>
+
+      <div class="funnelbox">
+        <div class="funnel">
+          <div class="fstep"><span class="fn">Anúncio</span><span class="fm">CPM · alcance</span></div>
+          <div class="fstep"><span class="fn">Clique</span><span class="fm">CTR · CPC</span></div>
+          <div class="fstep"><span class="fn">Página / WhatsApp</span><span class="fm">taxa de conversão</span></div>
+          <div class="fstep"><span class="fn">Lead</span><span class="fm">CPL · volume</span></div>
+          <div class="fstep"><span class="fn">Qualidade</span><span class="fm">% qualificado</span></div>
+          <div class="fstep"><span class="fn">Venda</span><span class="fm">receita · ROAS</span></div>
+        </div>
+      </div>
+
+      <div class="tablebox">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Sintoma</th>
+              <th scope="col">Etapa que quebrou</th>
+              <th scope="col">Primeira ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="sym">CPM alto, pouco alcance</td><td class="stage">Anúncio</td><td>Ampliar público, testar novo ângulo — não só novo formato</td></tr>
+            <tr><td class="sym">Alcance ok, CTR baixo</td><td class="stage">Anúncio</td><td>Criativo não conversa com o público: trocar o ângulo</td></tr>
+            <tr><td class="sym">CTR bom, poucos chegam na página</td><td class="stage">Clique → Página</td><td>Testar o link com clique real, medir velocidade e versão mobile</td></tr>
+            <tr><td class="sym">Chegam na página e não viram lead</td><td class="stage">Página → Lead</td><td>Alinhar a promessa do anúncio, reduzir atrito do formulário, reforçar prova</td></tr>
+            <tr><td class="sym">Muitos leads, qualidade ruim</td><td class="stage">Lead → Qualidade</td><td>Qualificar já no anúncio, adicionar filtro, revisar a oferta</td></tr>
+            <tr><td class="sym">Leads bons, não vira venda</td><td class="stage">Qualidade → Venda</td><td>Medir tempo de resposta e alinhar o script com quem atende</td></tr>
+            <tr><td class="sym">Funcionava e caiu de repente</td><td class="stage">Qualquer</td><td>Checar entrega, saldo e tracking antes de mexer em estratégia</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <span class="k">Antes de mexer em qualquer coisa</span>
+        <p>Confira <strong>entrega, saldo e tracking</strong>. Metade das “quedas de performance” é uma dessas três — e nenhuma se resolve trocando criativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="papeis" aria-labelledby="h-papeis">
+    <div class="wrap">
+      <div class="sechead">
+        <div class="eyebrow">Quem faz o quê</div>
+        <h2 id="h-papeis">Papéis</h2>
+        <p>Toda etapa tem <strong>um</strong> responsável — quem executa e responde pelo prazo. Se uma pessoa acumula dois papéis, ela aparece nos dois; o que não pode é a etapa ficar sem dono.</p>
+      </div>
+      <div class="roles">
+        <div class="role"><span class="sig">LS</span><span class="nm">Líder de squad</span><p>Valida os gates, desbloqueia impedimentos, aloca pessoas.</p></div>
+        <div class="role"><span class="sig">CS</span><span class="nm">Customer Success</span><p>Relação com o cliente, grupo, agenda, cobrança de acessos e material.</p></div>
+        <div class="role"><span class="sig">GT</span><span class="nm">Gestor de tráfego</span><p>Funil, campanha, otimização, indicadores.</p></div>
+        <div class="role"><span class="sig">CR</span><span class="nm">Criação</span><p>Manual de marca, criativo, copy.</p></div>
+        <div class="role"><span class="sig">TEC</span><span class="nm">Tech / Tracking</span><p>Pixels, tags, GTM, GA4, eventos, Make, Stract, servidor.</p></div>
+        <div class="role"><span class="sig">ADM</span><span class="nm">Financeiro</span><p>Contrato, saldo, meio de pagamento, notas.</p></div>
+      </div>
+
+      <div class="callout key">
+        <span class="k">Os três pontos de maior alavancagem</span>
+        <p>
+          <strong>1.</strong> Acesso é o passo 2, não o passo 10 — o pedido sai no D1.
+          <strong>2.</strong> A Reunião de Integração resolve em uma hora, com a tela do
+          cliente compartilhada, o que o WhatsApp não resolve em seis dias.
+          <strong>3.</strong> Otimizar o sistema de aquisição, não o Gerenciador.
+        </p>
+      </div>
+
+      <div class="callout">
+        <span class="k">Escalada</span>
+        <p>
+          Item parado até 24h: o responsável cobra. De 24 a 48h: vira <strong>pendente/bloqueado</strong>,
+          com o nome de quem está travando. Acima de 48h: <strong>escala para o líder</strong>,
+          que fala com o cliente formalmente e comunica o impacto no marco por escrito.
+          “Estou esperando o cliente” não é status — esperar tem dono e data.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pagefoot">
+  <div class="wrap">
+    <div class="eyebrow">Status</div>
+    <p>
+      Versão 2.0 — alinhada ao fluxo oficial da Flowformance: ordem, marcos e vocabulário.
+      Os marcos (D1, D4, D10, 30 dias) vêm do fluxo oficial. Os nomes dos papéis e as metas
+      internas (D3, D6, D8, D9) são proposta de partida — ajuste antes de publicar ao time.
+    </p>
+    <p>
+      O fluxograma oficial continua sendo a arquitetura. Isto aqui é o sistema usado
+      diariamente: a mesma linguagem no Trello, no checklist e no treinamento.
+    </p>
+  </div>
+</footer>
+
+<script>
+  var PHASES = [
+    {
+      id: "fase-1", idx: "Etapa 1", nome: "Entrada", janela: "Pós Kickoff · D0 – D1", marco: "MARCO D1",
+      goal: "O cliente deixa de ser uma venda e passa a ser uma operação aberta. Ordem oficial: entrada no grupo → acesso → contato e agenda → planilha e Trello.",
+      gate: "Gate 1 — Cliente recebido",
+      gateNote: "Marco D1: cliente oficialmente recebido, operação aberta.",
+      advance: [
+        "Resumo comercial recebido",
+        "Grupo criado e populado",
+        "Lista única de acessos enviada ao cliente",
+        "Briefing agendado até D3",
+        "Reunião de Integração agendada até D6",
+        "Planilha, card e pasta criados"
+      ],
+      steps: [
+        { n: "1.1", t: "Kickoff — passagem do comercial para a operação", r: "CS", sla: "D0 + 4h",
+          ev: "Card no Trello com o resumo comercial anexado",
+          note: "O erro mais caro do onboarding é a operação assumir um cliente sem saber o que o comercial prometeu.",
+          ck: ["Contrato assinado em mãos", "Resumo comercial: o que foi vendido, promessa, verba e prazo", "Expectativas e pontos sensíveis registrados", "Contatos e decisor identificados"] },
+        { n: "1.2", t: "Responsável e squad", r: "LS", sla: "D0",
+          ev: "Membros atribuídos no card",
+          ck: ["Gestor de tráfego definido", "CS definido", "Criação definida", "Capacidade conferida: a pessoa cabe neste cliente?"] },
+        { n: "1.3", t: "Entrada no grupo", r: "CS", sla: "D0",
+          ev: "Print do grupo com a descrição preenchida",
+          ck: ["Grupo no padrão Flowformance × [Cliente]", "Cliente e decisor dentro", "Responsáveis da squad dentro", "Descrição com quem é quem e horário de atendimento"] },
+        { n: "1.4", t: "Acesso — pedido da lista única", r: "CS", sla: "D1",
+          ev: "Mensagem com a lista, anexada ao card",
+          note: "Acesso é o segundo passo do fluxo, não algo do D4. É o item que mais atrasa o D10, então sai na frente.",
+          ck: ["Lista única enviada — não pingada aos poucos", "Passo a passo de como conceder cada acesso", "Data da Reunião de Integração proposta na mesma mensagem", "Responsável do lado do cliente nomeado"] },
+        { n: "1.5", t: "Contato e agenda", r: "CS", sla: "D1",
+          ev: "Print das boas-vindas + convites aceitos no calendário",
+          ck: ["Boas-vindas pelo script padrão", "Apresentação de quem faz o quê", "O que acontece nos próximos 10 dias, explicado", "Briefing até D3 e Reunião de Integração até D6 agendados"] },
+        { n: "1.6", t: "Planilha e Trello", r: "CS", sla: "D1", marco: true,
+          ev: "Links da planilha e do card",
+          ck: ["Planilha criada pelo modelo, com cadastro, verba e ciclo", "Card criado pelo template padrão", "Checklists D1/D4/D10/30 dias presentes", "Datas de D4 e D10 preenchidas · labels aplicados"] },
+        { n: "1.7", t: "Pasta e base do cliente", r: "CS", sla: "D1",
+          ev: "Link da pasta no card",
+          ck: ["Subpastas: briefing, marca, criativos, campanhas, relatórios, acessos", "Compartilhada com a squad"] }
+      ]
+    },
+    {
+      id: "fase-2", idx: "Etapa 2", nome: "Preparação", janela: "Manual de Marca · D1 – D4", marco: "MARCO D4",
+      goal: "Performance recebe direcionamento e identidade prontos — sem depender de mais uma reunião. No fim desta etapa, entra Flowformance.",
+      gate: "Gate 2 — Manual de Marca · Entra Flowformance",
+      gateNote: "Marco D4: identidade e direcionamento estratégico disponíveis.",
+      advance: [
+        "Meta numérica com prazo, validada com o cliente",
+        "Oferta, público e concorrência descritos",
+        "Quem atende o lead e em quanto tempo, por escrito",
+        "Criativos existentes levantados e OS aberta",
+        "Manual de Marca entregue e na pasta"
+      ],
+      steps: [
+        { n: "2.1", t: "Reunião de briefing", r: "GT", sla: "até D3",
+          ev: "Gravação + briefing preenchido na pasta",
+          ck: ["Roteiro de briefing seguido", "Reunião gravada", "Dúvidas em aberto listadas no fim da call", "Próximos passos combinados com data"] },
+        { n: "2.2", t: "Objetivo e meta", r: "GT", sla: "D4",
+          ev: "Linha do briefing com o número e o prazo",
+          note: "Sem número não existe otimização — existe opinião.",
+          ck: ["Objetivo de negócio declarado — não “mais visibilidade”", "Meta numérica com prazo", "Métrica principal escolhida: CPL, CPA, ROAS…", "Meta validada com o cliente"] },
+        { n: "2.3", t: "Oferta e PUV", r: "GT", sla: "D4",
+          ev: "Bloco “Oferta/PUV” do briefing",
+          ck: ["O que é vendido, por quanto, em qual condição", "Por que comprar aqui e não do concorrente", "Objeções mais comuns listadas", "Provas disponíveis: depoimento, case, garantia"] },
+        { n: "2.4", t: "Público", r: "GT", sla: "D4",
+          ev: "Bloco “Público” do briefing",
+          ck: ["ICP descrito · região de atuação", "Público que não serve, para excluir", "Bases próprias: lista, CRM, tráfego do site"] },
+        { n: "2.5", t: "Concorrência", r: "CR", sla: "D4",
+          ev: "Doc de concorrência na pasta de marca",
+          ck: ["3 concorrentes mapeados", "Biblioteca de anúncios consultada", "Ângulos que eles usam anotados", "Brecha identificada: o que ninguém está falando"] },
+        { n: "2.6", t: "Canais e destino do lead", r: "GT", sla: "D4",
+          ev: "Registrado no card",
+          note: "O funil de mídia é montado na etapa 4. O que precisa estar resolvido agora é para onde o lead cai e quem atende — senão a campanha gera lead para morrer parado.",
+          ck: ["Canais escolhidos com justificativa", "Destino do lead: WhatsApp, formulário, LP, CRM", "Quem atende o lead — nome", "Em quanto tempo responde — número"] },
+        { n: "2.7", t: "Levantamento de criativos", r: "CR", sla: "D4",
+          ev: "Pasta de criativos populada + OS aberta",
+          ck: ["Material existente coletado", "O que dá para usar já, separado", "O que precisa ser produzido, listado", "OS aberta para o que falta"] },
+        { n: "2.8", t: "Manual de Marca", r: "CR", sla: "D4", marco: true,
+          ev: "Manual de Marca na pasta de marca",
+          ck: ["Logo e variações", "Cores e tipografia", "Tom de voz", "O que a marca não faz nem fala"] }
+      ]
+    },
+    {
+      id: "fase-3", idx: "Etapa 3", nome: "Integração", janela: "Acessos e Integração · D4 – D10", marco: "MARCO D10",
+      goal: "A infraestrutura existe e está testada — não “o cliente disse que mandou o acesso”. Três estados por item: não iniciado, pendente/bloqueado, validado.",
+      gate: "Gate 3 — Acessos e Integração validados",
+      gateNote: "Item travado há mais de 48h vira escalada para o líder, com dono e data.",
+      advance: [
+        "Reunião de Integração realizada, com tela compartilhada",
+        "Meta, GMN e Google Ads com acesso ativo",
+        "Site e traqueamentos instalados, sem duplicidade",
+        "Evento de conversão disparando em teste real",
+        "Formulário/WhatsApp testado com envio real",
+        "Saldo ativo e compatível com a verba"
+      ],
+      steps: [
+        { n: "3.1", t: "Reunião de Integração", r: "CS", sla: "até D6",
+          ev: "Gravação + checklist preenchido ao vivo",
+          note: "Etapa de maior alavancagem do onboarding inteiro. Uma hora de call com a tela compartilhada resolve o que seis dias de cobrança no WhatsApp não resolvem. Quando ela não acontece, o D10 fura — é o padrão, não a exceção.",
+          ck: ["Cliente com o computador aberto e compartilhando tela", "Pauta: Meta · Google Meu Negócio · Google Ads · Site e traqueamentos", "Acessos concedidos durante a call, não prometidos para depois", "O que não deu para resolver sai com dono e data", "Saldo e meio de pagamento tratados na mesma call"] },
+        { n: "3.2", t: "Meta — BM, página, Instagram, conta de anúncios", r: "TEC", sla: "D8",
+          ev: "Print do acesso ativo na Business Manager",
+          ck: ["Acesso de parceiro na BM", "Página do Facebook · Instagram vinculado", "Conta de anúncios com nível de acesso correto", "Meio de pagamento ativo"] },
+        { n: "3.3", t: "Google Meu Negócio e Google Ads", r: "TEC", sla: "D8",
+          ev: "Print da vinculação aceita",
+          ck: ["Perfil da Empresa (GMN) com acesso", "Google Ads vinculada ao MCC", "Faturamento configurado", "Histórico da conta verificado: campanhas antigas, penalidades"] },
+        { n: "3.4", t: "Site e traqueamentos", r: "TEC", sla: "D8",
+          ev: "Print do event manager / GA4 recebendo",
+          ck: ["Acesso ao site/CMS ou ao dev do cliente", "Pixel Meta e tag do Google instalados", "GTM publicado e GA4 recebendo dados, quando aplicável", "Sem duplicidade de disparo", "UTMs e parâmetros de origem padronizados"] },
+        { n: "3.5", t: "Tracking validado em teste real", r: "TEC", sla: "D9",
+          ev: "Print do evento recebido + do formulário testado",
+          note: "Nenhuma campanha sobe sem este item validado. Campanha sem tracking é dinheiro gasto sem aprendizado — o prejuízo não é a verba, é o mês perdido.",
+          ck: ["Evento de conversão principal definido", "Disparando em teste real, não só no modo de teste", "Conversão importada na plataforma de anúncio", "Formulário / WhatsApp testado com envio real, recebido do outro lado"] },
+        { n: "3.6", t: "Saldo", r: "ADM", sla: "D8",
+          ev: "Print do meio de pagamento ativo + campo na planilha",
+          ck: ["Cartão ou boleto ativo na conta", "Limite compatível com a verba", "Responsável pelo pagamento identificado", "Data de virada de fatura anotada"] }
+      ]
+    },
+    {
+      id: "fase-4", idx: "Etapa 4", nome: "Ativação", janela: "1ª Campanha · até D10", marco: "MARCO D10",
+      goal: "Primeira campanha no ar, documentada, com tracking funcionando.",
+      gate: "Gates 4 e 5 — Pronto para campanha · 1ª Campanha publicada",
+      gateNote: "Marco D10 — e o onboarding continua: publicar não é concluir.",
+      advance: [
+        "Funil e hipótese escritos antes de montar",
+        "Projeção de CPL/CPA registrada",
+        "Criativo com 2+ ângulos e copy aprovados",
+        "Link de destino testado com clique real",
+        "Revisão de 4 olhos feita pelo líder",
+        "Primeiro gasto e primeiro evento registrados",
+        "Doc 1ª Campanha preenchido"
+      ],
+      steps: [
+        { n: "4.1", t: "Funil e estratégia de mídia", r: "GT", sla: "D8",
+          ev: "Bloco “Estratégia” do Doc da 1ª Campanha",
+          ck: ["Funil desenhado do anúncio até a venda", "Canal e objetivo de campanha escolhidos", "Hipótese central escrita: “acreditamos que X converte porque Y”", "O que será testado primeiro", "Aprovação do líder"] },
+        { n: "4.2", t: "Estrutura e orçamento", r: "GT", sla: "D9",
+          ev: "Print da estrutura + linha na planilha",
+          ck: ["Campanhas, conjuntos e anúncios nomeados no padrão", "Verba total confirmada e dividida por campanha", "Verba diária calculada até o fim do ciclo", "Projeção de CPL/CPA registrada — é contra ela que se mede depois"] },
+        { n: "4.3", t: "Públicos", r: "GT", sla: "D9",
+          ev: "Print dos públicos criados",
+          ck: ["Públicos criados · bases próprias subidas quando houver", "Remarketing configurado", "Exclusões aplicadas · sobreposição evitada"] },
+        { n: "4.4", t: "Criativo", r: "CR", sla: "D9",
+          ev: "Arquivos na pasta + OS fechada",
+          ck: ["Formatos exigidos pelo posicionamento entregues", "Pelo menos 2 ângulos diferentes", "Conforme o Manual de Marca", "Aprovado pelo gestor"] },
+        { n: "4.5", t: "Copy", r: "CR", sla: "D9",
+          ev: "Copy anexada ao card",
+          ck: ["Headline e corpo por ângulo · CTA claro", "Promessa alinhada com a página de destino", "Revisado: português e regras da plataforma"] },
+        { n: "4.6", t: "Revisão pré-publicação — 4 olhos", r: "LS", sla: "D10",
+          ev: "Comentário de aprovação do líder no card",
+          note: "Última chance barata de achar erro. Depois de publicar, o erro tem custo de mídia.",
+          ck: ["Tracking validado · saldo ativo", "Orçamento e datas conferidos", "Link de destino testado com clique real", "Público e exclusões conferidos · nomenclatura no padrão"] },
+        { n: "4.7", t: "1ª Campanha publicada", r: "GT", sla: "D10", marco: true,
+          ev: "Print da campanha ativa com entrega iniciada",
+          ck: ["Campanha ativa · anúncios aprovados pela plataforma", "Primeiro gasto confirmado", "Primeiro evento de conversão registrado", "Cliente comunicado no grupo"] },
+        { n: "4.8", t: "Doc 1ª Campanha", r: "GT", sla: "D10 + 1",
+          ev: "Documento na pasta de campanhas, linkado no card",
+          ck: ["Doc da 1ª Campanha preenchido", "Hipótese, estrutura e verba registradas", "O que será avaliado e quando"] }
+      ]
+    },
+    {
+      id: "fase-5", idx: "Etapa 5", nome: "Aprendizado", janela: "30 dias · D10 – D40", marco: "MARCO 30 DIAS",
+      goal: "Transformar os primeiros 30 dias em conhecimento sobre o negócio do cliente — não em pânico de CPL. Contam-se 30 dias da campanha no ar, não do kickoff.",
+      gate: "Gate 6 — Aprendizado concluído",
+      gateNote: "É aqui que o onboarding termina de verdade.",
+      advance: [
+        "Stract conectado e Make rodando sem erro",
+        "Relatórios semanais enviados, sem improviso",
+        "30 dias de dados coletados",
+        "CPL/CPA de referência estabelecido",
+        "3+ ciclos de otimização documentados",
+        "Qualidade de lead validada com quem atende",
+        "Rotina diária, semanal e mensal funcionando"
+      ],
+      steps: [
+        { n: "5.1", t: "Stract, Make e relatórios semanais", r: "TEC", sla: "D14, depois semanal",
+          ev: "Relatório enviado, com data",
+          ck: ["Stract conectado e atualizando", "Cenário do Make rodando sem erro", "Modelo de relatório semanal definido", "Primeiro relatório enviado na semana 1"] },
+        { n: "5.2", t: "Servidor × Chat UTI", r: "TEC", sla: "contínuo",
+          ev: "Registro de checagem no board",
+          ck: ["Serviço no ar", "Falhas tratadas em até 24h", "Registro de indisponibilidade, quando houver"] },
+        { n: "5.3", t: "Saldos e otimizações", r: "GT", sla: "diário / 2× semana",
+          ev: "Log de otimizações no card",
+          note: "Uma mudança por vez, com hipótese escrita antes e data de avaliação definida. Duas mudanças juntas = nenhum aprendizado.",
+          ck: ["Saldo suficiente para os próximos 7 dias", "Campanha entregando, sem anúncio reprovado", "Uma mudança por vez, com hipótese escrita antes", "Resultado avaliado no prazo, não antes", "Indicadores conforme o objetivo: CTR, CPC, CPM, CPL, CPA"] },
+        { n: "5.4", t: "Ordem de serviço", r: "GT", sla: "conforme demanda",
+          ev: "OS no template, anexada ao card",
+          ck: ["OS no template, com o porquê preenchido", "Etapa do sistema de aquisição que deve melhorar", "Prazo acordado", "Entrega conferida antes de subir"] },
+        { n: "5.5", t: "Acompanhamento dos grupos de WhatsApp", r: "CS", sla: "diário",
+          ev: "Pedidos do grupo virando card",
+          ck: ["Grupo respondido dentro do horário de atendimento", "Nada combinado só no WhatsApp — pedido vira card", "Sinais de risco escalados ao líder no mesmo dia"] },
+        { n: "5.6", t: "Qualidade dos leads", r: "CS", sla: "semanal",
+          ev: "Bloco de qualidade no relatório semanal",
+          ck: ["Amostra de leads revisada com quem atende", "% de lead qualificado estimada", "Motivos de desqualificação anotados", "Tempo de resposta do cliente medido"] },
+        { n: "5.7", t: "Reunião de alinhamento", r: "CS", sla: "quinzenal",
+          ev: "Ata com decisões, dono e prazo",
+          ck: ["Leitura do funil com o cliente", "Expectativa recalibrada contra a meta do briefing", "Pendências do cliente cobradas formalmente"] }
+      ]
+    },
+    {
+      id: "fase-6", idx: "Etapa 6", nome: "Operação contínua", janela: "D40 +", marco: "CICLO TRIMESTRAL",
+      goal: "Manter a operação organizada e previsível, com ciclos estratégicos em vez de reação.",
+      gate: "Ciclo trimestral",
+      gateNote: "Todo trimestre: resultado contra a meta, o que aprendemos, nova meta acordada.",
+      advance: [
+        "Relatório semanal e mensal saindo na data",
+        "Reunião de performance realizada com o cliente",
+        "Bases, planilha e pasta atualizadas",
+        "Reunião interna semanal com decisões registradas",
+        "Novo ciclo estratégico com nova meta numérica"
+      ],
+      steps: [
+        { n: "6.1", t: "Relatórios mensais", r: "GT", sla: "mensal",
+          ev: "Relatório enviado + ata",
+          ck: ["Resultado do mês contra a meta", "Leitura das 6 etapas do sistema de aquisição", "Verba do próximo ciclo confirmada"] },
+        { n: "6.2", t: "Reunião de performance", r: "GT", sla: "mensal",
+          ev: "Ata com decisões, dono e prazo",
+          ck: ["O que funcionou e o que foi descartado, com número", "Decisão de escalar, corrigir ou mudar de estratégia", "Próximo mês combinado com o cliente"] },
+        { n: "6.3", t: "Atualização de bases", r: "CS", sla: "mensal",
+          ev: "Planilha e pasta com data de atualização",
+          ck: ["Planilha do cliente atualizada", "Pasta organizada · documentos linkados no card", "Contatos e acessos revalidados"] },
+        { n: "6.4", t: "Reunião interna", r: "LS", sla: "semanal",
+          ev: "Ata da reunião",
+          ck: ["Clientes em risco listados", "Gates travados revisados", "Carga do time conferida", "Decisões registradas com dono e prazo"] },
+        { n: "6.5", t: "Relatório trimestral e novo ciclo", r: "LS", sla: "trimestral",
+          ev: "Documento de ciclo + reunião com o cliente",
+          ck: ["Resultado do trimestre contra a meta", "O que aprendemos sobre o negócio do cliente", "O que muda no próximo trimestre", "Nova meta numérica acordada"] },
+        { n: "6.6", t: "Saldo e fechamento do mês", r: "ADM", sla: "mensal",
+          ev: "Planilha do mês fechada",
+          ck: ["Saldo conferido contra o investido", "Virada de fatura acompanhada", "Divergências levantadas com o cliente"] }
+      ]
+    }
+  ];
+
+  var KEY_ROLE = "flowformance.papel";
+  var KEY_MODE = "flowformance.modo";
+  var KEY_STEP = "flowformance.etapa";
+
+  function store(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* sem storage, segue */ } }
+  function recall(k, fb) { try { return localStorage.getItem(k) || fb; } catch (e) { return fb; } }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  (function renderRail() {
+    var rail = document.getElementById("rail");
+    if (!rail) return;
+    PHASES.forEach(function (p, i) {
+      var b = el("button", "seg" + (p.marco.indexOf("MARCO") === 0 ? " is-marco" : ""));
+      b.type = "button";
+      b.setAttribute("data-goto", String(i));
+      b.appendChild(el("span", "num", p.idx.toUpperCase()));
+      b.appendChild(el("span", "nm", p.nome));
+      b.appendChild(el("span", "win", p.janela));
+      b.appendChild(el("span", "marco", p.marco));
+      rail.appendChild(b);
+    });
+  })();
+
+  (function renderPhases() {
+    var host = document.getElementById("phases");
+    if (!host) return;
+
+    PHASES.forEach(function (p) {
+      var art = el("article", "phase");
+      art.id = p.id;
+
+      var head = document.createElement("header");
+      head.appendChild(el("span", "idx", p.idx));
+      head.appendChild(el("h3", null, p.nome));
+      head.appendChild(el("span", "win", p.janela));
+      head.appendChild(el("p", "goal", p.goal));
+      art.appendChild(head);
+
+      var body = el("div", "phasebody");
+
+      var left = document.createElement("div");
+      left.appendChild(el("div", "colhead", "O que fazer agora"));
+      var list = el("div", "steps");
+
+      p.steps.forEach(function (s) {
+        var st = el("div", "step");
+        st.setAttribute("data-resp", s.r);
+
+        var title = el("div", "title");
+        title.appendChild(el("em", null, s.n));
+        title.appendChild(document.createTextNode(s.t));
+        st.appendChild(title);
+
+        var tags = el("div", "tags");
+        tags.appendChild(el("span", "resp", s.r));
+        tags.appendChild(el("span", "sla" + (s.marco ? " marco" : ""), s.sla));
+        st.appendChild(tags);
+
+        var ev = el("div", "ev");
+        ev.appendChild(el("b", null, "Evidência"));
+        ev.appendChild(document.createTextNode(s.ev));
+        st.appendChild(ev);
+
+        if (s.note) st.appendChild(el("div", "note", s.note));
+
+        var det = el("details", "ck");
+        det.appendChild(el("summary", null, "Checklist (" + s.ck.length + ")"));
+        var ul = document.createElement("ul");
+        s.ck.forEach(function (c) { ul.appendChild(el("li", null, c)); });
+        det.appendChild(ul);
+        st.appendChild(det);
+
+        list.appendChild(st);
+      });
+
+      left.appendChild(list);
+      body.appendChild(left);
+
+      var adv = el("div", "advance");
+      adv.appendChild(el("div", "colhead", "Para avançar"));
+      adv.appendChild(el("div", "gatename", p.gate));
+      var aul = document.createElement("ul");
+      p.advance.forEach(function (a) { aul.appendChild(el("li", null, a)); });
+      adv.appendChild(aul);
+      adv.appendChild(el("p", "who", "Quem abre o gate é o líder de squad, conferindo as evidências. O gestor solicita a passagem; não move o próprio card."));
+      body.appendChild(adv);
+
+      art.appendChild(body);
+
+      var foot = document.createElement("footer");
+      foot.appendChild(el("span", "g", p.gate));
+      foot.appendChild(el("span", null, p.gateNote));
+      art.appendChild(foot);
+
+      host.appendChild(art);
+    });
+  })();
+
+  var state = {
+    mode: recall(KEY_MODE, "step") === "full" ? "full" : "step",
+    step: Math.min(Math.max(parseInt(recall(KEY_STEP, "0"), 10) || 0, 0), PHASES.length - 1),
+    role: recall(KEY_ROLE, "all")
+  };
+
+  var phasesEl = document.getElementById("phases");
+  var stepbar = document.getElementById("stepbar");
+  var posEl = document.getElementById("pos");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var phaseEls = Array.prototype.slice.call(document.querySelectorAll(".phase"));
+  var segEls = Array.prototype.slice.call(document.querySelectorAll(".seg"));
+
+  function paint() {
+    var stepMode = state.mode === "step";
+
+    phasesEl.classList.toggle("mode-step", stepMode);
+    stepbar.hidden = !stepMode;
+
+    phaseEls.forEach(function (n, i) {
+      n.hidden = stepMode && i !== state.step;
+    });
+
+    segEls.forEach(function (n, i) {
+      n.classList.toggle("current", stepMode && i === state.step);
+    });
+
+    if (stepMode) {
+      var p = PHASES[state.step];
+      posEl.textContent = p.idx + " de " + PHASES.length + " · " + p.nome + " · " + p.marco;
+      prevBtn.disabled = state.step === 0;
+      nextBtn.disabled = state.step === PHASES.length - 1;
+      nextBtn.textContent = state.step === PHASES.length - 1 ? "Última etapa" : "Próxima etapa →";
+    }
+
+    document.querySelectorAll(".modebtn").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-mode") === state.mode));
+    });
+
+    document.querySelectorAll(".step").forEach(function (s) {
+      s.classList.toggle("dim", state.role !== "all" && s.getAttribute("data-resp") !== state.role);
+    });
+
+    document.querySelectorAll(".rolebtn").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-role") === state.role));
+    });
+  }
+
+  function goTo(i, scroll) {
+    state.step = Math.min(Math.max(i, 0), PHASES.length - 1);
+    store(KEY_STEP, String(state.step));
+    if (state.mode !== "step") { state.mode = "step"; store(KEY_MODE, "step"); }
+    paint();
+    if (scroll) {
+      var target = document.getElementById("fases");
+      if (target) target.scrollIntoView({ block: "start" });
+    }
+  }
+
+  document.querySelectorAll(".modebtn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.mode = b.getAttribute("data-mode");
+      store(KEY_MODE, state.mode);
+      paint();
+    });
+  });
+
+  document.querySelectorAll(".rolebtn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.role = b.getAttribute("data-role");
+      store(KEY_ROLE, state.role);
+      paint();
+    });
+  });
+
+  segEls.forEach(function (b) {
+    b.addEventListener("click", function () { goTo(parseInt(b.getAttribute("data-goto"), 10), true); });
+  });
+
+  prevBtn.addEventListener("click", function () { goTo(state.step - 1, true); });
+  nextBtn.addEventListener("click", function () { goTo(state.step + 1, true); });
+
+  paint();
+</script>
+
+</body>
+</html>

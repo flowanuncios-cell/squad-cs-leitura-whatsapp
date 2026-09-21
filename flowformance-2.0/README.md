@@ -16,6 +16,12 @@ consulta, e filtro "meu papel" — o júnior vê só o que é dele.
 
 > Página privada. Só abre para quem receber acesso pelo menu **Share**.
 
+**Arquivo HTML standalone:** [`fluxograma-jornada.html`](fluxograma-jornada.html) —
+mesma página, num arquivo único, sem dependência de servidor. Abre com duplo clique
+no navegador, pode ser hospedado em qualquer lugar ou enviado ao time por e-mail.
+Só precisa de internet para as fontes (sem internet, cai para a fonte do sistema e
+continua funcionando).
+
 ---
 
 ## Por que isso existe
