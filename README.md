@@ -85,6 +85,18 @@ flexibilidade de cancelar, Contabo mensal sai melhor e não tem aumento na renov
 
 ---
 
+## Também neste repositório
+
+### 📘 [`flowformance-2.0/`](flowformance-2.0/) — Sistema Operacional do Cliente
+
+Camada operacional e treinável do fluxograma de onboarding: 6 fases, 3 marcos
+(D1/D4/D10), 6 Gates, e cada etapa com **Responsável | SLA | Checklist | Evidência**.
+Inclui Trello padrão, checklists dos marcos, manual de treinamento (os 8 verbos) e
+fluxograma em Mermaid. Assunto separado do monitor de WhatsApp — comece pelo
+[README da pasta](flowformance-2.0/README.md).
+
+---
+
 ## Fonte original
 Pacote do Gabriel: `~/Downloads/gabriel-agentes-extraido/_gabriel-agentes-briefings/`
 (extraído de `_gabriel-agentes-briefings.rar`). O pacote completo tem specs dos 4
